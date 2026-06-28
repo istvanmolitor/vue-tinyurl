@@ -37,4 +37,8 @@ export const tinyurlService = {
   delete(id: number | string) {
     return api.delete(`/api/admin/tinyurl/tinyurls/${id}`)
   },
+
+  quickCreate(url: string) {
+    return api.post<{ data: Tinyurl }>('/api/admin/tinyurl/quick-create', { url })
+  },
 }
